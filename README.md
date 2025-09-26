@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# Corso React – Giorno 4
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Esercizi pratici su Rendering condizionale e liste
 
-Currently, two official plugins are available:
+### Esercizio 1 – Messaggio di login
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Crea un componente LoginMessage che riceve come prop isLoggedIn (booleano).
+Se true, mostra 'Bentornato utente!', altrimenti 'Effettua il login'.
+Suggerimento: usa operatore ternario.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Esercizio 2 – Lista di streamer
 
-## Expanding the ESLint configuration
+Crea un array di oggetti con id, nome e categoria.
+Usa .map() per renderizzare una lista di <li> con key basata su id.
+Mostra 'Nessuno streamer disponibile' se l’array è vuoto.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Esercizio 3 – Stato di caricamento
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Crea un componente ProductList con tre stati: loading, error, success.
+Se loading → mostra 'Caricamento...'.
+Se error → mostra messaggio di errore.
+Se success → mostra lista prodotti con .map().
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Esercizio 4 – Navbar attiva
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Crea una navbar con un array di voci (id, label, href).
+Gestisci nello state l’activeId.
+Applica la classe 'active' alla voce selezionata.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+### Esercizio 5 – Filtri su lista prodotti
+
+Crea un array di prodotti (id, nome, categoria, prezzo).
+Usa select per filtrare per categoria.
+Mostra i prodotti filtrati con .map().
