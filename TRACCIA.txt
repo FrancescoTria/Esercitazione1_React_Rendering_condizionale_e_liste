@@ -1,0 +1,38 @@
+Corso React – Giorno 4
+
+Esercizi pratici su Rendering condizionale e liste
+
+Esercizio 1 – Messaggio di login
+
+Crea un componente LoginMessage che riceve come prop isLoggedIn (booleano).
+Se true, mostra 'Bentornato utente!', altrimenti 'Effettua il login'.
+Suggerimento: usa operatore ternario.
+
+
+Esercizio 2 – Lista di streamer
+
+Crea un array di oggetti con id, nome e categoria.
+Usa .map() per renderizzare una lista di <li> con key basata su id.
+Mostra 'Nessuno streamer disponibile' se l’array è vuoto.
+
+
+Esercizio 3 – Stato di caricamento
+
+Crea un componente ProductList con tre stati: loading, error, success.
+Se loading → mostra 'Caricamento...'.
+Se error → mostra messaggio di errore.
+Se success → mostra lista prodotti con .map().
+
+
+Esercizio 4 – Navbar attiva
+
+Crea una navbar con un array di voci (id, label, href).
+Gestisci nello state l’activeId.
+Applica la classe 'active' alla voce selezionata.
+
+
+Esercizio 5 – Filtri su lista prodotti
+
+Crea un array di prodotti (id, nome, categoria, prezzo).
+Usa select per filtrare per categoria.
+Mostra i prodotti filtrati con .map().
